@@ -37,4 +37,50 @@ def divide(a, b):
     pdb.set_trace() # this will set a breakpoint at this line
     
     return a / b
-result = divide(5, 0) # when you run this code, it will pause at the line with pdb.set_trace(), and you can use commands like 'n' to step to the next line, 'p' to print the value of variables, and 'c' to continue execution until the next breakpoint or the end of the program. This can help you understand the flow of the program and identify where the error is occurring, which in this case is when b is zero.
+#result = divide(5, 0) # when you run this code, it will pause at the line with pdb.set_trace(), and you can use commands like 'n' to step to the next line, 'p' to print the value of variables, and 'c' to continue execution until the next breakpoint or the end of the program. This can help you understand the flow of the program and identify where the error is occurring, which in this case is when b is zero.
+
+#3. using assertions: you can use assertions to check if certain conditions are met in your code. For example:
+def amount(a):
+    #assert a > 0, "a must be greater than 0" # this will raise an AssertionError if a is not greater than 0
+    return a + 10
+result = amount(-5) # this will raise an AssertionError because a is not greater than 0. The assertion will help you identify that the value of a is not valid and is causing the error.
+
+#whether the developers assumptions are correct or not, and if not, it will raise an error with a message that can help you understand what went wrong.
+
+"""Assertions can be disabled in optimized Python runs.
+So:
+useful for debugging/development
+not ideal for critical runtime validation"""
+
+#4. using logging: you can use the logging module in Python to log messages at different levels. For example:
+#logging means recording messages that can help you understand the flow of the program and identify where the error is occurring. 
+# You can use the logging module in Python to log messages at different levels (e.g., debug, info, warning, error, critical) and configure the logging output to a file or console.
+#Logs are the “memory” of software systems. They are used to record events, errors, and other information that can help developers understand the behavior of the system and identify issues.
+"""Because logging provides:
+
+timestamps
+log levels
+file saving
+filtering
+scalability
+production monitoring"""
+
+"""Main Log levels:
+DEBUG: Detailed information, typically of interest only when diagnosing problems.
+INFO: Confirmation that things are working as expected.
+WARNING: An indication that something unexpected happened, or indicative of some problem in the near future (e.g., ‘disk space low’). The software is still working as expected.
+ERROR: Due to a more serious problem, the software has not been able to perform some function.
+CRITICAL: A serious error, indicating that the program itself may be unable to continue running."""
+
+import logging
+#logging.debug("This is a debug message") # this will log a debug message
+#this will not be logged because the default logging level is WARNING, which means that only messages with a level of WARNING or higher will be logged. You can change the logging level to DEBUG to see this message.
+
+logging.basicConfig(filename="app.log", level=logging.DEBUG,format ='%(asctime)s - %(levelname)s - %(message)s') # this will configure the logging to show messages with a level of DEBUG or higher, and include the timestamp, log level, and message in the log output.
+f = 10
+g = 0
+try :
+    result = f / g # this will raise a ZeroDivisionError because you cannot divide by zero.
+except ZeroDivisionError as e:
+    logging.error("An error occurred: %s", e) # this will log an error message with the details of the exception. The logging output will include the timestamp, log level, and message, which can help you understand what went wrong and identify where the error is occurring.
+

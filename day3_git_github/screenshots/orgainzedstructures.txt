@@ -1,0 +1,208 @@
+day3_git_github/
+│
+├── .git/
+│
+├── .gitignore
+├── README.md
+│
+├── screenshots/
+│   ├── 01_git_version.png
+│   ├── 02_git_init.png
+│   ├── 03_git_status.png
+│   ├── 04_first_commit.png
+│   ├── 05_branch_creation.png
+│   ├── 06_merge_success.png
+│   ├── 07_merge_conflict.png
+│   ├── 08_conflict_resolution.png
+│   ├── 09_remote_setup.png
+│   ├── 10_push_success.png
+│   ├── 11_stash_workflow.png
+│   ├── 12_reflog.png
+│   ├── 13_git_graph.png
+│   └── 14_pull_request.png
+│
+├── practice-project/
+│   │
+│   ├── app.py
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── .env
+│   ├── .gitignore
+│   │
+│   ├── src/
+│   │   └── main.py
+│   │
+│   ├── docs/
+│   │   └── git_notes.md
+│   │
+│   ├── tests/
+│   │   └── test_sample.py
+│   │
+│   └── assets/
+│       └── sample.png
+│
+└── notes/
+    ├── git_commands.md
+    ├── merge_conflicts.md
+    ├── stash_notes.md
+    ├── pull_request_notes.md
+    └── advanced_git.md
+
+    #It is the project folder structure
+
+    # Git & GitHub Professional Workflow Practice
+
+## Overview
+
+This repository contains hands-on Git and GitHub practice exercises completed as part of internship learning and professional workflow simulation.
+
+The project demonstrates:
+- Git initialization
+- Branching workflows
+- Merge conflict resolution
+- Pull request workflow
+- GitHub collaboration
+- Stashing
+- Rebase concepts
+- Recovery using reflog
+- Professional repository structure
+
+---
+
+# Technologies Used
+
+- Git
+- GitHub
+- Git Bash
+- Python
+
+---
+
+# Folder Structure
+
+```bash
+day3_git_github/
+│
+├── screenshots/
+├── practice-project/
+├── notes/
+└── README.md
+```
+
+---
+
+# Git Topics Practiced
+
+## Basic Git Commands
+- git init
+- git status
+- git add
+- git commit
+- git log
+
+---
+
+## Branching
+- Create branches
+- Switch branches
+- Delete branches
+- Rename branches
+
+---
+
+## Merge Operations
+- Fast-forward merge
+- Manual merge conflict resolution
+- Merge abort workflow
+
+---
+
+## Remote Repository Workflow
+- Add remote repository
+- Push changes
+- Pull changes
+- Fetch updates
+- GitHub pull requests
+
+---
+
+## Advanced Git Operations
+- git stash
+- git reflog
+- git reset
+- git revert
+- git cherry-pick
+- git rebase
+
+---
+
+# Real-World Scenarios Practiced
+
+## Scenario 1 — Merge Conflict
+Simulated conflict between multiple branches and resolved manually.
+
+## Scenario 2 — Secret File Protection
+Used `.gitignore` to prevent `.env` file from being pushed.
+
+## Scenario 3 — Branch Mismatch
+Resolved `main` vs `master` branch issues.
+
+## Scenario 4 — Unrelated Histories
+Handled repository history mismatch using advanced merge techniques.
+
+## Scenario 5 — Force Push Workflow
+Learned safe use of `git push --force`.
+
+---
+
+# Screenshots Included
+
+The `screenshots/` folder contains proof of:
+- repository initialization
+- commits
+- branching
+- merge conflicts
+- pull requests
+- stash workflow
+- reflog recovery
+- Git graph visualization
+
+---
+
+# Important Learnings
+
+- Git tracks commit history, not just files.
+- Branch ancestry is critical for pull requests.
+- `.gitignore` improves security and repository cleanliness.
+- Merge conflicts are normal in collaborative development.
+- Force push must be used carefully.
+
+---
+
+# Future Improvements
+
+- Add CI/CD workflows
+- Add GitHub Actions
+- Practice team collaboration simulation
+- Implement protected branch workflow
+
+---
+
+# Author
+
+Gnani Sai
+
+---
+
+# Final Note
+
+This repository was created to practice professional Git workflows and understand real-world software collaboration challenges.
+
+.env
+node_modules/
+__pycache__/
+*.log
+.vscode/
+.idea/
+dist/
+build/

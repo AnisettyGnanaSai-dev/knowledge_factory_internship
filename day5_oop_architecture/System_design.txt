@@ -1,0 +1,752 @@
+
+
+## Detailed study guide: System Design Concepts Course and Interview Prep
+
+This video is a broad system design foundation course. The main idea is that system design interviews are less about writing code and more about designing systems that scale, stay reliable, and handle real-world traffic and failure. The course moves from computer basics up to distributed systems, APIs, caching, load balancing, and databases.
+
+---
+
+# 1) What system design is
+
+System design is about **how parts of a system work together**. You’re not just solving one function — you’re designing the whole workflow:
+
+- how requests enter the system
+- how data is stored
+- how data moves between services
+- how the system stays fast when traffic grows
+- how the system survives failures
+
+In interviews, the goal is to explain **tradeoffs**, not just name tools.
+
+### Core goals
+- **Scalability**: handle more users or more data
+- **Reliability**: keep working when things fail
+- **Maintainability**: make the system easy to change later
+- **Efficiency**: use resources well
+
+### Diagram: system design mindset
+```text
+Users
+  ↓
+API / Gateway
+  ↓
+Application servers
+  ↓
+Database / Cache / Storage
+  ↓
+Monitoring + Logs + Alerts
+```
+
+---
+
+# 2) Computer building blocks
+
+Before designing large systems, the video reviews how computers work internally. The point is to understand where performance comes from.
+
+## Memory hierarchy
+Data is stored at different levels, from fastest/smallest to slowest/largest:
+
+```text
+CPU Registers
+   ↓
+L1 Cache
+   ↓
+L2 Cache
+   ↓
+L3 Cache
+   ↓
+RAM
+   ↓
+SSD / HDD
+```
+
+### Why this matters
+- **Cache** is extremely fast, but small
+- **RAM** is fast and active while the machine is on
+- **SSD/HDD** is persistent storage, but slower
+
+### Example
+If your app needs user data repeatedly, reading it from RAM or cache is much faster than reading it from disk every time.
+
+## CPU
+The CPU executes instructions. High-level code is compiled into machine code before the CPU can run it.
+
+### Example pipeline
+```text
+High-level code
+  ↓
+Compiler
+  ↓
+Machine code
+  ↓
+CPU executes it
+```
+
+---
+
+# 3) Production system architecture
+
+A real production system usually has more than just an app server and database.
+
+## Typical production components
+- **CI/CD pipeline**: automatically tests and deploys code
+- **Load balancer / reverse proxy**: spreads requests across servers
+- **External storage**: keeps data separate from app servers
+- **Logging and monitoring**: tracks health and errors
+- **Alerts**: notify engineers when something breaks
+
+### Diagram: production architecture
+```text
+Git repo
+  ↓
+CI/CD pipeline
+  ↓
+Load balancer
+  ↓
+App server 1   App server 2   App server 3
+     ↓             ↓               ↓
+          Database / storage
+                ↓
+       Logs / monitoring / alerts
+```
+
+## Debugging workflow
+The video emphasizes a practical process:
+
+1. Check logs and anomalies
+2. Reproduce the issue in staging
+3. Debug the system
+4. Deploy a hot fix if needed
+5. Follow up with a permanent fix
+
+### Key rule
+Do **not** debug directly in production unless absolutely necessary.
+
+### Example
+If checkout is failing:
+- inspect logs
+- reproduce the bug in staging
+- find whether the failure is in payment, auth, or database writes
+- patch it and redeploy
+
+---
+
+# 4) The main system design pillars
+
+The course breaks system design into three core data concerns:
+
+## Moving data
+Data must flow between users, services, and databases.
+
+Examples:
+- browser to server
+- server to server
+- server to storage
+
+## Storing data
+You must decide where data lives and how long it stays there.
+
+Examples:
+- SQL database
+- NoSQL database
+- cache
+- object storage
+
+## Transforming data
+Raw data often needs to be processed into useful output.
+
+Examples:
+- converting user input into structured JSON
+- aggregating logs
+- generating recommendations
+
+### Diagram: the three verbs
+```text
+Move data  →  Store data  →  Transform data
+```
+
+---
+
+# 5) CAP theorem
+
+CAP is a key distributed systems tradeoff.
+
+## The three properties
+- **Consistency**: every node sees the same data
+- **Availability**: every request gets a response
+- **Partition tolerance**: the system keeps working even when the network splits
+
+### Main idea
+A distributed system cannot fully guarantee all three at once. You have to choose tradeoffs.
+
+### Example
+A banking system usually prefers:
+- **Consistency**
+- **Partition tolerance**
+
+It may sacrifice some availability rather than let balances become incorrect.
+
+### Diagram: CAP
+```text
+        Consistency
+           /\
+          /  \
+         /    \
+Availability -- Partition Tolerance
+```
+
+---
+
+# 6) Reliability, availability, and resilience
+
+## Availability
+Availability is the percentage of time a system is operational.
+
+Example:
+- **99.9% availability** means very little downtime
+- Higher availability means more engineering cost
+
+## SLO vs SLA
+- **SLO** = internal performance goal
+- **SLA** = formal customer promise
+
+### Example
+- SLO: 99.9% of requests should respond in under 300 ms
+- SLA: if availability drops below 99.99%, customers may get compensation
+
+## Reliability, fault tolerance, redundancy
+- **Reliability**: the system works consistently
+- **Fault tolerance**: the system keeps working even if a part fails
+- **Redundancy**: backup components exist so one failure does not take down the whole system
+
+### Example
+If one database replica goes down, another can take over.
+
+### Diagram: redundancy
+```text
+Primary server  → fails
+Backup server   → takes over
+```
+
+---
+
+# 7) Throughput vs latency
+
+These are not the same.
+
+- **Throughput** = how much work the system handles over time
+- **Latency** = how long one request takes
+
+### Example
+A batch processor might have:
+- high throughput
+- higher latency
+
+A chat app needs:
+- low latency
+- still decent throughput
+
+### Tradeoff example
+Batching requests often improves throughput but increases latency.
+
+### Diagram: tradeoff
+```text
+Higher throughput  ↔  Higher latency
+Lower latency      ↔  Lower batching
+```
+
+---
+
+# 8) Networking fundamentals
+
+## IP addresses
+IP addresses identify devices on a network.
+
+- **IPv4**: 32-bit
+- **IPv6**: 128-bit
+
+## Packets
+Data travels in packets, which include sender and receiver information.
+
+## TCP vs UDP
+
+### TCP
+- reliable
+- ordered
+- connection-based
+- uses a handshake
+
+### UDP
+- faster
+- less reliable
+- no guaranteed order or delivery
+
+### Example use cases
+- **TCP**: web pages, file transfer, database connections
+- **UDP**: video calls, live streaming, real-time gaming
+
+### Diagram: TCP vs UDP
+```text
+TCP: sender → handshake → ordered delivery → receiver
+UDP: sender → fast packet send → receiver
+```
+
+## DNS
+DNS turns domain names into IP addresses.
+
+### Example
+When you type a website URL:
+1. browser asks DNS
+2. DNS returns IP address
+3. browser connects to server
+
+### DNS records
+- **A record** → IPv4 address
+- **AAAA record** → IPv6 address
+
+## Ports
+Ports identify which service should receive a request.
+
+Examples:
+- port 80 = HTTP
+- port 22 = SSH
+
+---
+
+# 9) Application-layer protocols
+
+The video covers common communication protocols.
+
+## HTTP
+HTTP is the standard web protocol.
+
+### Main properties
+- request-response
+- stateless
+- built on TCP/IP
+
+### Methods
+- **GET**: read data
+- **POST**: create data
+- **PUT**: replace data
+- **PATCH**: partial update
+- **DELETE**: remove data
+
+### Status codes
+- 200 = success
+- 300 = redirect
+- 400 = client error
+- 500 = server error
+
+### Example
+```text
+GET /products/42
+→ returns product 42
+```
+
+## WebSockets
+WebSockets support two-way real-time communication.
+
+### Use cases
+- chat apps
+- live sports scores
+- stock updates
+
+## Email protocols
+- **SMTP**: sending email
+- **IMAP**: reading email while syncing across devices
+- **POP**: downloading email locally
+
+## File transfer / secure access
+- **FTP**: file transfer
+- **SSH**: secure remote access
+
+## Messaging and real-time media
+- **WebRTC**: browser-to-browser media communication
+- **MQTT**: lightweight IoT messaging
+- **AMQP**: message broker systems like RabbitMQ
+
+## RPC
+RPC makes a remote function call feel like a local function call.
+
+### Example
+A service calls another service’s function over the network.
+
+---
+
+# 10) API design
+
+The course uses CRUD and common API styles to explain how systems expose data.
+
+## CRUD
+- **Create** → POST
+- **Read** → GET
+- **Update** → PUT/PATCH
+- **Delete** → DELETE
+
+### Example: e-commerce API
+```text
+POST   /api/products
+GET    /api/products
+GET    /api/products/123
+PATCH  /api/products/123
+DELETE /api/products/123
+```
+
+## REST
+REST APIs:
+- use HTTP methods
+- are stateless
+- are easy to understand and widely used
+
+### Strengths
+- simple
+- standard
+- well supported
+
+### Weaknesses
+- can overfetch or underfetch data
+
+## GraphQL
+GraphQL lets the client request exactly the fields it needs.
+
+### Strengths
+- avoids overfetching
+- avoids underfetching
+
+### Weaknesses
+- complex queries can hurt performance
+
+### Example
+A client can ask for:
+- product name
+- price
+- review count
+
+instead of receiving an entire product object.
+
+## gRPC
+gRPC uses:
+- HTTP/2
+- protocol buffers
+
+### Strengths
+- fast
+- efficient
+- good for internal service communication
+
+### Weaknesses
+- less human-readable than JSON
+- more setup than REST
+
+## Good API practices
+- keep GET requests read-only
+- support pagination
+- support filtering
+- version APIs when needed
+- use rate limiting
+- handle CORS properly
+
+### Example: pagination
+```text
+GET /products?limit=20&offset=40
+```
+
+---
+
+# 11) Caching and CDNs
+
+Caching is one of the biggest ways to improve performance.
+
+## Why caching matters
+If the same data is requested repeatedly, storing a copy makes responses faster.
+
+### Cache flow
+```text
+Request
+  ↓
+Cache hit? → yes → return quickly
+  ↓ no
+Fetch from origin
+  ↓
+Store in cache
+  ↓
+Return response
+```
+
+## Types of caching
+
+### Browser cache
+The browser stores static assets like:
+- HTML
+- CSS
+- JavaScript
+- images
+
+### Server cache
+The app server or cache server stores frequently used data.
+
+Example tools:
+- Redis
+- Memcached
+
+### Database cache
+Databases or a nearby cache can store repeated query results.
+
+### CDN
+A CDN stores content close to users around the world.
+
+### Example
+A user in Europe should not have to wait for a file from a server in the US if a nearby edge server already has it.
+
+## Cache strategies
+- **Read-through**
+- **Write-through**
+- **Write-back**
+- **Write-around**
+
+## Eviction policies
+When cache is full, something must be removed:
+- **LRU**: least recently used
+- **FIFO**: first in, first out
+- **LFU**: least frequently used
+
+## CDN benefits
+- lower latency
+- less load on origin servers
+- better availability
+- improved resilience
+
+---
+
+# 12) Proxies and load balancing
+
+## Proxy basics
+A proxy sits between client and server.
+
+### Forward proxy
+Acts on behalf of the client.
+
+### Reverse proxy
+Acts on behalf of the server.
+
+## Reverse proxy use cases
+- load balancing
+- security
+- SSL termination
+- hiding internal servers
+
+## Load balancers
+A load balancer distributes requests across multiple servers.
+
+### Common strategies
+- **Round robin**
+- **Least connections**
+- **Least response time**
+- **IP hashing**
+- **Weighted routing**
+- **Geographic routing**
+- **Consistent hashing**
+
+### Example
+If one server is busier than others, least-connections routing sends new traffic to a less busy one.
+
+## Health checks
+Load balancers should stop sending traffic to failed servers.
+
+### Diagram: load balancer
+```text
+Users
+  ↓
+Load balancer
+  ↓   ↓   ↓
+S1  S2  S3
+```
+
+If S2 fails, the load balancer removes it from rotation.
+
+---
+
+# 13) Databases
+
+## SQL databases
+Relational databases store data in tables.
+
+Examples:
+- PostgreSQL
+- MySQL
+- SQLite
+
+### Strengths
+- structured data
+- strong consistency
+- transactions
+- joins
+
+### ACID
+- **Atomicity**
+- **Consistency**
+- **Isolation**
+- **Durability**
+
+## NoSQL databases
+NoSQL systems are more flexible.
+
+Examples:
+- MongoDB
+- Cassandra
+- Redis
+
+Types:
+- key-value
+- document
+- graph
+
+### Strengths
+- flexible schema
+- good for scale in some use cases
+- often simpler for certain data models
+
+## In-memory databases
+These keep data in RAM for speed.
+
+Examples:
+- Redis
+- Memcached
+
+### Use cases
+- caching
+- sessions
+- fast lookup
+
+---
+
+# 14) Scaling databases
+
+## Vertical scaling
+Make one machine bigger:
+- more CPU
+- more RAM
+- more storage
+
+## Horizontal scaling
+Add more machines.
+
+### Two common methods
+
+#### Sharding
+Split data across multiple servers.
+
+Example:
+- users A–F on shard 1
+- users G–L on shard 2
+- users M–Z on shard 3
+
+#### Replication
+Copy data across multiple servers.
+
+Example:
+- one primary node writes data
+- replicas serve reads
+
+### Diagram: replication
+```text
+Primary DB
+   ↓   ↓   ↓
+Replica Replica Replica
+```
+
+## Performance techniques
+- indexing
+- query optimization
+- caching
+- reducing expensive joins
+
+---
+
+# 15) High-yield examples to remember
+
+## Example 1: Chat app
+Needs:
+- WebSockets for real-time messages
+- caching for user info
+- database replication
+- load balancing
+- alerts and logs
+
+## Example 2: Video streaming
+Needs:
+- CDN for fast delivery
+- UDP in some real-time contexts
+- caching of popular content
+- scalable storage
+
+## Example 3: E-commerce site
+Needs:
+- REST or GraphQL API
+- SQL database for orders
+- cache for product pages
+- load balancer
+- monitoring and CI/CD
+
+---
+
+# 16) Diagrams you should be able to draw from memory
+
+## A. Production architecture
+```text
+Users → Load Balancer → App Servers → Database
+                         ↓
+                   Logs / Monitoring
+```
+
+## B. Cache request flow
+```text
+Request → Cache hit? → Yes: respond
+                  ↓ No
+              Origin server
+                  ↓
+                Cache store
+```
+
+## C. CAP theorem
+```text
+Consistency
+ /        \
+/          \
+Availability — Partition Tolerance
+```
+
+## D. Database scaling
+```text
+Vertical scaling: one bigger machine
+Horizontal scaling: more machines with sharding/replication
+```
+
+## E. Protocol stack
+```text
+Application protocols
+   ↓
+Transport: TCP / UDP
+   ↓
+Network: IP
+   ↓
+Physical hardware
+```
+
+---
+
+# 17) Quick review questions
+
+1. What is the difference between throughput and latency?
+2. Why is TCP preferred over UDP for web browsing?
+3. What does DNS do?
+4. What is the difference between REST and GraphQL?
+5. Why do we use CDNs?
+6. What is the difference between sharding and replication?
+7. What does CAP mean?
+8. Why is redundancy important?
+9. What is a reverse proxy?
+10. What does ACID stand for?
+
+---

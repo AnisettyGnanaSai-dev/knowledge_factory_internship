@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 
-from config.settings import (
+# updated by codex: switched to package-safe imports
+from api_time_machine.config.settings import (
     MONGO_URL,
     DATABASE_NAME,
     COLLECTION_NAME

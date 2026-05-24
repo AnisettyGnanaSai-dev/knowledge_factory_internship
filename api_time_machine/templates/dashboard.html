@@ -13,6 +13,23 @@
 
     <h1>API Time Machine</h1>
 
+    <div class="card">
+        <h3>Test Any API</h3>
+        <label>Method</label>
+        <select id="method-select">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PUT</option>
+            <option>PATCH</option>
+            <option>DELETE</option>
+        </select>
+        <label>URL</label>
+        <input id="url-input" type="text" placeholder="https://jsonplaceholder.typicode.com/posts" style="width: 100%; margin: 8px 0;">
+        <label>JSON Body (optional)</label>
+        <textarea id="body-input" rows="6" style="width: 100%; margin: 8px 0;" placeholder='{"title": "demo"}'></textarea>
+        <button onclick="testExternalApi()">Send API Request</button>
+    </div>
+
     <button onclick="loadHistory()">
         Load Request History
     </button>

@@ -1,4 +1,5 @@
-from database.mongo_connection import request_collection
+# updated by codex: switched to package-safe imports
+from api_time_machine.database.mongo_connection import request_collection
 from datetime import datetime
 
 

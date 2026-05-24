@@ -38,11 +38,31 @@ async function loadHistory() {
 
 async function analyzeRequest(id) {
 
-    let response = await fetch(`/analyze/${id}`)
+    // updated by codex: show user-visible loading state while AI call is in progress
+    alert("AI is thinking... Please wait.")
 
-    let data = await response.json()
+    try {
 
-    alert(data.analysis)
+        let response = await fetch(`/analyze/${id}`)
+
+        let data = await response.json()
+
+        if (!response.ok) {
+            alert(data.error || "AI analysis failed.")
+            return
+        }
+
+        if (!data.analysis) {
+            alert("AI returned no analysis. Check Ollama service/model and try again.")
+            return
+        }
+
+        alert(data.analysis)
+
+    } catch (error) {
+
+        alert("AI analyze request failed. Please check backend and Ollama server.")
+    }
 }
 
 

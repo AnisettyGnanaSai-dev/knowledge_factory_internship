@@ -1,7 +1,8 @@
 from flask import Blueprint, jsonify
 
-from services.request_service import RequestService
-from services.ai_service import AIService
+# updated by codex: switched to package-safe imports
+from api_time_machine.services.request_service import RequestService
+from api_time_machine.services.ai_service import AIService
 
 ai = Blueprint("ai", __name__)
 
@@ -17,7 +18,13 @@ def analyze_request(request_id):
             "error": "Request not found"
         }), 404
 
-    analysis = AIService.analyze_request(request_data)
+    # updated by codex: return friendly error response if AI/Ollama call fails
+    try:
+        analysis = AIService.analyze_request(request_data)
+    except Exception as error:
+        return jsonify({
+            "error": f"AI analyze failed: {error}"
+        }), 500
 
     return jsonify({
         "analysis": analysis

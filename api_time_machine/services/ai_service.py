@@ -1,11 +1,13 @@
 import requests
 
-from config.settings import (
+# updated by codex: switched to package-safe imports
+from api_time_machine.config.settings import (
     OLLAMA_URL,
     OLLAMA_MODEL
 )
 
-from utils.prompt_builder import build_analysis_prompt
+# updated by codex: switched to package-safe imports
+from api_time_machine.utils.prompt_builder import build_analysis_prompt
 
 
 class AIService:

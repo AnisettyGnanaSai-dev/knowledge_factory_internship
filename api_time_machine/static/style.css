@@ -1,0 +1,38 @@
+body {
+
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial;
+    padding: 20px;
+}
+
+h1 {
+
+    color: cyan;
+}
+
+button {
+
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background: cyan;
+    color: black;
+    border-radius: 5px;
+}
+
+.card {
+
+    background: #1e293b;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+pre {
+
+    background: #111827;
+    padding: 10px;
+    overflow-x: auto;
+}

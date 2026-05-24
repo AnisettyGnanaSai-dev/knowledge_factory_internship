@@ -1,0 +1,26 @@
+2026-05-23 17:32:00,375 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-23 17:32:00,375 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-23 17:32:00,377 - INFO -  * Restarting with stat
+2026-05-23 17:32:00,837 - WARNING -  * Debugger is active!
+2026-05-23 17:32:00,844 - INFO -  * Debugger PIN: 130-566-721
+2026-05-23 17:34:56,006 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-23 17:34:56,006 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-23 17:34:56,009 - INFO -  * Restarting with stat
+2026-05-23 17:34:56,844 - WARNING -  * Debugger is active!
+2026-05-23 17:34:56,848 - INFO -  * Debugger PIN: 130-566-721
+2026-05-23 17:38:26,866 - INFO - 127.0.0.1 - - [23/May/2026 17:38:26] "[31m[1mGET /test-api HTTP/1.1[0m" 405 -
+2026-05-23 17:38:27,018 - INFO - 127.0.0.1 - - [23/May/2026 17:38:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-23 17:44:47,145 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-23 17:44:47,145 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-23 17:44:47,147 - INFO -  * Restarting with stat
+2026-05-23 17:44:47,977 - WARNING -  * Debugger is active!
+2026-05-23 17:44:47,984 - INFO -  * Debugger PIN: 130-566-721
+2026-05-23 17:47:43,815 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-23 17:47:43,815 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-23 17:54:23,827 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8000
+2026-05-23 17:54:23,828 - INFO - [33mPress CTRL+C to quit[0m

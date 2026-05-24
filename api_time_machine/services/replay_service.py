@@ -10,7 +10,8 @@ class ReplayService:
         method = request_data.get("method")
         request_body = request_data.get("request_body")
 
-        full_url = f"http://127.0.0.1:5000{endpoint}"
+        # updated by codex: replay full external URL when available
+        full_url = request_data.get("full_url") or f"http://127.0.0.1:5000{endpoint}"
 
         try:
 
@@ -24,6 +25,15 @@ class ReplayService:
             elif method == "GET":
 
                 response = requests.get(full_url)
+
+            elif method == "PUT":
+                response = requests.put(full_url, json=request_body)
+
+            elif method == "PATCH":
+                response = requests.patch(full_url, json=request_body)
+
+            elif method == "DELETE":
+                response = requests.delete(full_url, json=request_body)
 
             else:
 

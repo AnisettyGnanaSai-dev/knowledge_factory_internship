@@ -18,7 +18,13 @@ def analyze_request(request_id):
             "error": "Request not found"
         }), 404
 
-    analysis = AIService.analyze_request(request_data)
+    # updated by codex: return friendly error response if AI/Ollama call fails
+    try:
+        analysis = AIService.analyze_request(request_data)
+    except Exception as error:
+        return jsonify({
+            "error": f"AI analyze failed: {error}"
+        }), 500
 
     return jsonify({
         "analysis": analysis

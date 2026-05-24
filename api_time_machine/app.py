@@ -1,8 +1,9 @@
 from flask import Flask, render_template
 
-from routes.api_routes import api
-from routes.ai_routes import ai
-from routes.replay_routes import replay
+# updated by codex: switched to package-safe imports
+from api_time_machine.routes.api_routes import api
+from api_time_machine.routes.ai_routes import ai
+from api_time_machine.routes.replay_routes import replay
 
 app = Flask(__name__)
 

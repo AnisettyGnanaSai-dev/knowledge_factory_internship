@@ -1,8 +1,10 @@
 from flask import Blueprint, request, jsonify
 
-from services.request_service import RequestService
+# updated by codex: switched to package-safe imports
+from api_time_machine.services.request_service import RequestService
 
-from middleware.request_logger import log_request
+# updated by codex: switched to package-safe imports
+from api_time_machine.middleware.request_logger import log_request
 
 api = Blueprint("api", __name__)
 

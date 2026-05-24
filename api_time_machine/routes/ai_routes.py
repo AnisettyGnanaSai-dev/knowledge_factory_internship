@@ -1,7 +1,8 @@
 from flask import Blueprint, jsonify
 
-from services.request_service import RequestService
-from services.ai_service import AIService
+# updated by codex: switched to package-safe imports
+from api_time_machine.services.request_service import RequestService
+from api_time_machine.services.ai_service import AIService
 
 ai = Blueprint("ai", __name__)
 

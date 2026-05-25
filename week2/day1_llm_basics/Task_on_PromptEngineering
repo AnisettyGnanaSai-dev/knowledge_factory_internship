@@ -1,0 +1,141 @@
+
+Exercise 1: Anatomy of the Ideal Prompt 
+Question: Design a prompt that asks an LLM to create a three-section 
+newsletter (intro, main content, conclusion) for a university tech club. 
+Prompt: 
+“You are an experienced newsletter writer for the ANITS Tech Club. 
+• Task: Write a newsletter with three sections: Introduction, Main Content, 
+and Conclusion. 
+• Context: For ANITS students interested in technology events, coding 
+workshops, and innovation updates. 
+• Tone: Engaging, friendly, motivating. 
+• Format: Use headings for each section. Keep each section within 150 
+words. 
+• Constraints: Focus only on ANITS activities and opportunities. 
+• Example: ‘Welcome back, ANITS techies! This month we bring you 
+exciting updates from our campus innovation circle…’” 
+Exercise 2: What Kind of Document? 
+Question: Write a prompt that makes the LLM generate a formal report (with 
+headings) comparing electric cars and hybrid cars. 
+Prompt: 
+“You are a research analyst preparing a formal comparative report on electric 
+vs hybrid cars. 
+• Task: Compare electric and hybrid cars. 
+• Context: Report for engineering students interested in sustainable 
+transportation. 
+• Persona: Professional automotive researcher. 
+• Tone: Formal, factual, academic. 
+• Format: Sections → Introduction, Advantages of Electric Cars, 
+Advantages of Hybrid Cars, Key Differences, Conclusion. 
+• Constraints: Limit to 500 words, objective only, no personal opinions.” 
+Exercise 3: The Advice Conversation 
+Question: Build a prompt where the model acts like a career counselor, giving 
+advice to a student unsure whether to pursue higher studies or start working. 
+Prompt: 
+“You are a career counselor. 
+• Task: Advise a student choosing between higher studies and a job. 
+• Context: Recently completed undergraduate engineering. 
+• Persona: Supportive advisor. 
+• Tone: Empathetic and practical. 
+• Format: Sections → Higher Studies Path, Working Path, Balanced 
+Recommendation. 
+• Constraints: Pros & cons for each, under 400 words, realistic advice.” 
+Exercise 4: The Analytic Report 
+Question: Create a prompt that produces an analytic report on the impact of 
+smartphones on student productivity, with sections for findings and 
+recommendations. 
+Prompt: 
+“You are an education researcher. 
+• Task: Report on smartphones’ impact on student productivity. 
+• Context: Audience = university faculty and students. 
+• Persona: Neutral researcher. 
+• Tone: Objective, data-driven. 
+• Format: Sections → Findings, Recommendations. 
+• Constraints: Use bullet points where needed, ≤500 words.” 
+Exercise 5: The Structured Document 
+Question: Write a prompt that gets the LLM to output a JSON list of three 
+Indian festivals, with name, state, and month as fields. 
+Prompt: 
+“You are a data formatter. 
+• Task: Output JSON list of 3 Indian festivals. 
+• Format: JSON only, no extra text. 
+• Constraints: Exactly 3 items, with fields → name, state, month. 
+• Example: 
+[ 
+{ "name": "Diwali", "state": "All India", "month": "October-November" } 
+] 
+```”   
+Exercise 6: Formatting Snippets 
+Question: You are given this snippet: “The Taj Mahal attracts over 6 million 
+visitors annually.” Create a prompt that uses this snippet while asking the 
+model to compare it with other world monuments. 
+Prompt: 
+“You are a cultural heritage analyst. 
+• Task: Compare the Taj Mahal with at least 2 other world monuments. 
+• Context: Snippet → ‘The Taj Mahal attracts over 6 million visitors 
+annually.’ 
+• Format: Sections → Taj Mahal, Other Monuments, Comparative Analysis, 
+Conclusion. 
+• Constraints: Snippet must appear exactly. ≤400 words.” 
+Exercise 7: More on Inertness 
+Question: Suppose you have background text: “Some sources claim video 
+games always harm students’ focus.” Write a prompt that makes the model 
+discuss both pros and cons fairly. 
+Prompt: 
+“You are an education analyst. 
+• Task: Discuss pros & cons of video games on student focus. 
+• Context: Background text → ‘Some sources claim video games always 
+harm students’ focus.’ 
+• Format: Sections → Pros, Cons, Conclusion. 
+• Constraints: Balanced view, ≤450 words.” 
+Exercise 8: Formatting Few-Shot Examples 
+Question: Provide two example translations from English to Hindi. Then, design 
+a prompt so the LLM translates a third English phrase into Hindi in the same 
+style. 
+Prompt: 
+“You are a translator. 
+• Task: Translate English → Hindi in same style as examples. 
+• Format: English: … | Hindi: … 
+• Constraints: No transliterations or extra explanation. 
+• Examples: 
+o English: Good morning → Hindi: शुभ प्रभात 
+o English: How are you? → Hindi: आप कैसे हैं? 
+• New Phrase: English: Thank you” 
+Exercise 9: Elastic Snippets 
+Question: You have a long passage about renewable energy. Create a prompt 
+that makes the LLM compress it into 3 concise bullet points. 
+Prompt: 
+“You are a content summarizer. 
+• Task: Summarize renewable energy passage into 3 bullets. 
+• Constraints: Exactly 3 points, ≤20 words each. No jargon. 
+• Example: 
+o Renewable energy reduces carbon emissions. 
+o Solar and wind power expanding. 
+o Storage challenges remain.” 
+Exercise 10: Relationships Among Prompt Elements 
+Question: Imagine you want the LLM to create a tagline for a startup app that 
+delivers groceries. Write a prompt that clearly separates context, instruction, 
+and constraints. 
+Prompt: 
+“You are a creative copywriter. 
+• Task: Write a tagline for grocery delivery app. 
+• Context: App delivers groceries in 30 minutes. 
+• Tone: Energetic, catchy. 
+• Constraints: Under 6 words. No clichés like ‘Fast and Fresh.’ 
+• Example: ‘Groceries in a Flash’” 
+Exercise 11: Putting It All Together 
+Question: A client is a 22-year-old preparing for competitive exams while 
+working part-time. Build a complete prompt that asks the LLM to act as a study 
+planner. 
+Prompt: 
+“You are an academic mentor. 
+• Task: Create a study plan. 
+• Context: 22-year-old, preparing for exams + part-time work. 
+• Persona: Time management coach. 
+• Tone: Practical and motivating. 
+• Format: Sections → Weekly Overview, Daily Routine, Study Techniques, 
+Tips. 
+• Constraints: ≤500 words. Include 1 motivational snippet. 
+• Example: 
+Weekly Overview: Weekdays = 3 hrs study + 4 hrs work, Weekends = 6 
+hrs study + rest.” 

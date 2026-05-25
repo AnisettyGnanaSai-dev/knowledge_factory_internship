@@ -1,0 +1,130 @@
+2026-05-23 18:03:20,813 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-23 18:03:20,814 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-24 11:38:50,982 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 11:38:50,982 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-24 11:48:31,009 - INFO - 127.0.0.1 - - [24/May/2026 11:48:31] "GET / HTTP/1.1" 200 -
+2026-05-24 11:48:31,665 - INFO - 127.0.0.1 - - [24/May/2026 11:48:31] "GET /static/dashboard.js HTTP/1.1" 200 -
+2026-05-24 11:48:31,667 - INFO - 127.0.0.1 - - [24/May/2026 11:48:31] "GET /static/style.css HTTP/1.1" 200 -
+2026-05-24 11:48:31,864 - INFO - 127.0.0.1 - - [24/May/2026 11:48:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-24 11:48:33,946 - INFO - 127.0.0.1 - - [24/May/2026 11:48:33] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:35,654 - INFO - 127.0.0.1 - - [24/May/2026 11:48:35] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:36,865 - INFO - 127.0.0.1 - - [24/May/2026 11:48:36] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:37,059 - INFO - 127.0.0.1 - - [24/May/2026 11:48:37] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:37,282 - INFO - 127.0.0.1 - - [24/May/2026 11:48:37] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:38,921 - INFO - 127.0.0.1 - - [24/May/2026 11:48:38] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:39,102 - INFO - 127.0.0.1 - - [24/May/2026 11:48:39] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:39,340 - INFO - 127.0.0.1 - - [24/May/2026 11:48:39] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:39,566 - INFO - 127.0.0.1 - - [24/May/2026 11:48:39] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:40,411 - INFO - 127.0.0.1 - - [24/May/2026 11:48:40] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:40,612 - INFO - 127.0.0.1 - - [24/May/2026 11:48:40] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:40,804 - INFO - 127.0.0.1 - - [24/May/2026 11:48:40] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:41,029 - INFO - 127.0.0.1 - - [24/May/2026 11:48:41] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:42,621 - INFO - 127.0.0.1 - - [24/May/2026 11:48:42] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:42,808 - INFO - 127.0.0.1 - - [24/May/2026 11:48:42] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:43,003 - INFO - 127.0.0.1 - - [24/May/2026 11:48:43] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:43,204 - INFO - 127.0.0.1 - - [24/May/2026 11:48:43] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:43,439 - INFO - 127.0.0.1 - - [24/May/2026 11:48:43] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:43,633 - INFO - 127.0.0.1 - - [24/May/2026 11:48:43] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:43,843 - INFO - 127.0.0.1 - - [24/May/2026 11:48:43] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:44,075 - INFO - 127.0.0.1 - - [24/May/2026 11:48:44] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:46,150 - INFO - 127.0.0.1 - - [24/May/2026 11:48:46] "GET / HTTP/1.1" 200 -
+2026-05-24 11:48:46,201 - INFO - 127.0.0.1 - - [24/May/2026 11:48:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 11:48:46,205 - INFO - 127.0.0.1 - - [24/May/2026 11:48:46] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 11:48:47,269 - INFO - 127.0.0.1 - - [24/May/2026 11:48:47] "GET / HTTP/1.1" 200 -
+2026-05-24 11:48:47,317 - INFO - 127.0.0.1 - - [24/May/2026 11:48:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 11:48:47,321 - INFO - 127.0.0.1 - - [24/May/2026 11:48:47] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 11:48:48,129 - INFO - 127.0.0.1 - - [24/May/2026 11:48:48] "GET / HTTP/1.1" 200 -
+2026-05-24 11:48:48,200 - INFO - 127.0.0.1 - - [24/May/2026 11:48:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 11:48:48,212 - INFO - 127.0.0.1 - - [24/May/2026 11:48:48] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 11:48:49,163 - INFO - 127.0.0.1 - - [24/May/2026 11:48:49] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:49,321 - INFO - 127.0.0.1 - - [24/May/2026 11:48:49] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:49,505 - INFO - 127.0.0.1 - - [24/May/2026 11:48:49] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:49,707 - INFO - 127.0.0.1 - - [24/May/2026 11:48:49] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:49,925 - INFO - 127.0.0.1 - - [24/May/2026 11:48:49] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:58,475 - INFO - 127.0.0.1 - - [24/May/2026 11:48:58] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:58,866 - INFO - 127.0.0.1 - - [24/May/2026 11:48:58] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:59,030 - INFO - 127.0.0.1 - - [24/May/2026 11:48:59] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:59,408 - INFO - 127.0.0.1 - - [24/May/2026 11:48:59] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:59,767 - INFO - 127.0.0.1 - - [24/May/2026 11:48:59] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:48:59,946 - INFO - 127.0.0.1 - - [24/May/2026 11:48:59] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:49:00,088 - INFO - 127.0.0.1 - - [24/May/2026 11:49:00] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:49:00,248 - INFO - 127.0.0.1 - - [24/May/2026 11:49:00] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:49:00,403 - INFO - 127.0.0.1 - - [24/May/2026 11:49:00] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:49:00,552 - INFO - 127.0.0.1 - - [24/May/2026 11:49:00] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:49:00,691 - INFO - 127.0.0.1 - - [24/May/2026 11:49:00] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:49:00,912 - INFO - 127.0.0.1 - - [24/May/2026 11:49:00] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:57:44,739 - INFO - 
+Endpoint: /test-api
+Method: POST
+Request Body: {'name': 'gnani', 'age': 21, 'email': 'gnanianisetty@gmail.com'}
+Status Code: 200
+Response: {'message': 'API received successfully', 'received_data': {'name': 'gnani', 'age': 21, 'email': 'gnanianisetty@gmail.com'}}
+
+2026-05-24 11:57:44,773 - INFO - 127.0.0.1 - - [24/May/2026 11:57:44] "POST /test-api HTTP/1.1" 200 -
+2026-05-24 11:58:02,966 - INFO - 127.0.0.1 - - [24/May/2026 11:58:02] "GET / HTTP/1.1" 200 -
+2026-05-24 11:58:03,125 - INFO - 127.0.0.1 - - [24/May/2026 11:58:03] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 11:58:03,126 - INFO - 127.0.0.1 - - [24/May/2026 11:58:03] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 11:58:04,758 - INFO - 127.0.0.1 - - [24/May/2026 11:58:04] "GET /history HTTP/1.1" 200 -
+2026-05-24 11:58:19,502 - INFO - 
+Endpoint: /test-api
+Method: POST
+Request Body: {'name': 'gnani', 'age': 21, 'email': 'gnanianisetty@gmail.com'}
+Status Code: 200
+Response: {'message': 'API received successfully', 'received_data': {'name': 'gnani', 'age': 21, 'email': 'gnanianisetty@gmail.com'}}
+
+2026-05-24 11:58:19,505 - INFO - 127.0.0.1 - - [24/May/2026 11:58:19] "POST /test-api HTTP/1.1" 200 -
+2026-05-24 11:58:19,554 - INFO - 127.0.0.1 - - [24/May/2026 11:58:19] "GET /replay/6a129a60f6a4eecde12d8fe5 HTTP/1.1" 200 -
+2026-05-24 12:00:27,262 - INFO - 127.0.0.1 - - [24/May/2026 12:00:27] "GET / HTTP/1.1" 200 -
+2026-05-24 12:00:30,012 - INFO - 127.0.0.1 - - [24/May/2026 12:00:30] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:00:30,035 - INFO - 127.0.0.1 - - [24/May/2026 12:00:30] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 12:00:32,694 - INFO - 127.0.0.1 - - [24/May/2026 12:00:32] "GET /history HTTP/1.1" 200 -
+2026-05-24 12:01:01,280 - INFO - 127.0.0.1 - - [24/May/2026 12:01:01] "GET / HTTP/1.1" 200 -
+2026-05-24 12:01:05,705 - INFO - 127.0.0.1 - - [24/May/2026 12:01:05] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 12:01:05,721 - INFO - 127.0.0.1 - - [24/May/2026 12:01:05] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:01:08,334 - INFO - 127.0.0.1 - - [24/May/2026 12:01:08] "GET /history HTTP/1.1" 200 -
+2026-05-24 12:11:53,015 - INFO - 127.0.0.1 - - [24/May/2026 12:11:52] "GET /analyze/6a129a60f6a4eecde12d8fe5 HTTP/1.1" 200 -
+2026-05-24 12:26:26,412 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 12:26:26,413 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-24 12:27:52,262 - INFO - 127.0.0.1 - - [24/May/2026 12:27:52] "GET / HTTP/1.1" 200 -
+2026-05-24 12:27:52,463 - INFO - 127.0.0.1 - - [24/May/2026 12:27:52] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:27:52,465 - INFO - 127.0.0.1 - - [24/May/2026 12:27:52] "GET /static/dashboard.js HTTP/1.1" 200 -
+2026-05-24 12:27:55,250 - INFO - 127.0.0.1 - - [24/May/2026 12:27:55] "GET /history HTTP/1.1" 200 -
+2026-05-24 12:28:12,257 - INFO - 
+Endpoint: /test-api
+Method: POST
+Request Body: {'name': 'gnani', 'age': 21, 'email': 'gnanianisetty@gmail.com'}
+Status Code: 200
+Response: {'message': 'API received successfully', 'received_data': {'name': 'gnani', 'age': 21, 'email': 'gnanianisetty@gmail.com'}}
+
+2026-05-24 12:28:12,257 - INFO - 127.0.0.1 - - [24/May/2026 12:28:12] "POST /test-api HTTP/1.1" 200 -
+2026-05-24 12:28:12,259 - INFO - 127.0.0.1 - - [24/May/2026 12:28:12] "GET /replay/6a129a83f6a4eecde12d8fe6 HTTP/1.1" 200 -
+2026-05-24 12:32:35,399 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 12:32:35,400 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-24 12:33:54,009 - INFO - 127.0.0.1 - - [24/May/2026 12:33:54] "GET / HTTP/1.1" 200 -
+2026-05-24 12:33:54,422 - INFO - 127.0.0.1 - - [24/May/2026 12:33:54] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:33:54,423 - INFO - 127.0.0.1 - - [24/May/2026 12:33:54] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 12:33:56,750 - INFO - 127.0.0.1 - - [24/May/2026 12:33:56] "GET /history HTTP/1.1" 200 -
+2026-05-24 12:36:42,456 - INFO - 127.0.0.1 - - [24/May/2026 12:36:42] "GET /analyze/6a12a184111537310e682bed HTTP/1.1" 200 -
+2026-05-24 12:49:39,496 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 12:49:39,497 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-24 12:49:44,406 - INFO - 127.0.0.1 - - [24/May/2026 12:49:44] "GET / HTTP/1.1" 200 -
+2026-05-24 12:49:44,723 - INFO - 127.0.0.1 - - [24/May/2026 12:49:44] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:49:44,726 - INFO - 127.0.0.1 - - [24/May/2026 12:49:44] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 12:49:46,451 - INFO - 127.0.0.1 - - [24/May/2026 12:49:46] "GET / HTTP/1.1" 200 -
+2026-05-24 12:49:46,484 - INFO - 127.0.0.1 - - [24/May/2026 12:49:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:49:46,489 - INFO - 127.0.0.1 - - [24/May/2026 12:49:46] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 12:49:47,606 - INFO - 127.0.0.1 - - [24/May/2026 12:49:47] "GET / HTTP/1.1" 200 -
+2026-05-24 12:49:47,643 - INFO - 127.0.0.1 - - [24/May/2026 12:49:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:49:47,647 - INFO - 127.0.0.1 - - [24/May/2026 12:49:47] "[36mGET /static/dashboard.js HTTP/1.1[0m" 304 -
+2026-05-24 12:56:22,072 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-24 12:56:22,072 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-24 12:56:34,708 - INFO - 127.0.0.1 - - [24/May/2026 12:56:34] "GET / HTTP/1.1" 200 -
+2026-05-24 12:56:34,950 - INFO - 127.0.0.1 - - [24/May/2026 12:56:34] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2026-05-24 12:56:34,954 - INFO - 127.0.0.1 - - [24/May/2026 12:56:34] "GET /static/dashboard.js HTTP/1.1" 200 -
+2026-05-24 12:57:06,673 - INFO - 127.0.0.1 - - [24/May/2026 12:57:06] "GET /history HTTP/1.1" 200 -

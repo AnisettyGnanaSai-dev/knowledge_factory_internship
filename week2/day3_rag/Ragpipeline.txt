@@ -1,0 +1,38 @@
+               ┌──────────────────┐
+               │   USER QUESTION  │
+               └────────┬─────────┘
+                        ↓
+              ┌──────────────────┐
+              │ EMBED QUESTION   │
+              └────────┬─────────┘
+                       ↓
+          ┌─────────────────────────┐
+          │ SEARCH DOCUMENT CHUNKS  │
+          └──────────┬──────────────┘
+                     ↓
+          ┌─────────────────────────┐
+          │ TOP RELEVANT CHUNKS     │
+          └──────────┬──────────────┘
+                     ↓
+          ┌─────────────────────────┐
+          │ BUILD PROMPT CONTEXT    │
+          └──────────┬──────────────┘
+                     ↓
+          ┌─────────────────────────┐
+          │ OLLAMA + QWEN2.5:7B     │
+          └──────────┬──────────────┘
+                     ↓
+          ┌─────────────────────────┐
+          │ GROUNDED FINAL ANSWER   │
+          └─────────────────────────┘
+
+          | Beginner RAG           | Enterprise RAG              |
+| ---------------------- | --------------------------- |
+| Python list            | Distributed vector DB       |
+| No security            | Access control              |
+| Single embedding model | Multiple domain models      |
+| Pure cosine similarity | Hybrid + reranking          |
+| Static documents       | Streaming ingestion         |
+| No monitoring          | Full observability          |
+| No evaluation          | Continuous evaluation       |
+| One-user notebook      | Multi-tenant infrastructure |

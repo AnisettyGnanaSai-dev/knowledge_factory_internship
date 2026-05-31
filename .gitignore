@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ChromaDB
+chroma_storage/
+
+# Node
+**/node_modules/
+**/.next/
+
+# Environment files
+.env
+.env.local
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store

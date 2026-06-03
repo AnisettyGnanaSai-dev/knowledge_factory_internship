@@ -1,0 +1,13 @@
+customer_id,name,age,city,salary,joining_date,department
+101,Sai,22,Vizag,45000,2024-01-15,IT
+102,Ravi,24,Hyderabad,52000,2023-11-20,HR
+103,Kiran,,Chennai,48000,2024-03-10,IT
+104,Priya,26,,55000,2023-09-05,Finance
+105,Akhil,23,Vizag,,2024-02-18,IT
+106,Anu,25,Hyderabad,60000,,HR
+107,Ramesh,27,Chennai,65000,2022-12-01,
+108,Divya,,Vizag,50000,2024-04-12,Finance
+109,Teja,21,Hyderabad,42000,2024-05-01,IT
+110,Lakshmi,24,,58000,2023-08-15,HR
+111,Venu,28,Vizag,70000,2022-10-10,Finance
+112,Keerthi,23,Chennai,,2024-01-30,IT
